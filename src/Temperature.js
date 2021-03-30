@@ -11,13 +11,13 @@ export default function Temperature() {
         <div className="clearfix weather-temperature">
           <p className="degrees">
             <span className="units">
-              <a href="#" id="celsius" className="active">
+              <a href={" "} id="celsius" className="active">
                 °C
               </a>{" "}
               |
-              <a href="#" id="fahrenheit">
+              <a href={" "} id="fahrenheit">
                 °F
-              </a>
+              </a>{" "}
             </span>
           </p>
         </div>
