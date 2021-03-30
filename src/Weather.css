@@ -1,0 +1,7 @@
+li {
+  list-style: none;
+  line-height: 18px;
+  color: #19167e;
+  text-transform: capitalize;
+  font-family: Arial, Helvetica, sans-serif;
+}

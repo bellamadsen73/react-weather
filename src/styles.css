@@ -1,0 +1,32 @@
+body {
+  max-width: 100%;
+  background-image: linear-gradient(#c6b8d6, #c3d6e7, #c6b8d6);
+}
+
+h1,
+h2,
+h3 {
+  color: #19167e;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  color: #19167e;
+}
+
+.wrapper {
+  border: 1px solid black;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-image: linear-gradient(#fd72c3, #bb83ff, #59aeff);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.row {
+  margin-top: 30px;
+}

@@ -1,0 +1,34 @@
+button {
+  background-color: #19167e;
+  color: white;
+  border: 1px solid #12121b;
+  border-radius: 10px;
+  padding: 5px 10px;
+  transition: all 200ms ease-in-out;
+}
+
+button:hover {
+  background: #064996;
+  color: white;
+  cursor: pointer;
+}
+
+#search-button {
+  background-color: #19167e;
+  color: white;
+  border: 1px solid #12121b;
+  border-radius: 10px;
+  padding: 5px 10px;
+  transition: all 200ms ease-in-out;
+}
+#search-button:hover {
+  background: #064996;
+  color: white;
+  cursor: pointer;
+}
+
+#search-form {
+  border: 1px solid #12121b;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
