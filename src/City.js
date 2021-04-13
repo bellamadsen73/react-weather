@@ -1,6 +1,7 @@
 import React from "react";
 import "./City.css";
 
+
 export default function City() {
   return (
     <div className="col-4">
@@ -8,4 +9,5 @@ export default function City() {
       <h2 id="date">Last updated: Saturday 12:00</h2>
     </div>
   );
+
 }

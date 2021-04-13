@@ -1,7 +1,10 @@
 import React from "react";
 import "./Temperature.css";
 
+
 export default function Temperature() {
+
+  
   return (
     <div className="row">
       <div className="col-2">
@@ -25,3 +28,4 @@ export default function Temperature() {
     </div>
   );
 }
+
