@@ -85,3 +85,24 @@ li {
   text-transform: capitalize;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+h3 {
+  font-size: 35px;
+}
+
+.degrees {
+  font-size: 30px;
+  padding: 5px;
+  color: #19167e;
+  text-align: left;
+}
+
+.weather-temperature .active {
+  color: #19167e;
+  cursor: default;
+  text-decoration: none;
+  font-weight: bold;
+}
+.weather-temperature .active:hover {
+  text-decoration: none;
+}

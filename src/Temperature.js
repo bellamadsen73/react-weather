@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Temperature.css";
+import "./styles.css";
 
 
 export default function Temperature() {
@@ -12,37 +12,20 @@ export default function Temperature() {
  }
 if(ready) {
   return (
-    <div className="row">
-      <div className="col-4">
-      <h1 id="city">Aarhus</h1>
+    <div>
+  <h1 id="city">Aarhus</h1>
       <h2 id="date">Last updated: Saturday 12:00</h2>
-    </div>
-    <div className="row">
-      <div className="col-2">
-        <h3 id="temperature">{temperature}</h3>
-      </div>
-      <div className="col-5">
-        <div className="clearfix weather-temperature">
-          <p className="degrees">
-            <span className="units">
-              <a href={" "} id="celsius" className="active">
-                °C
-              </a>{" "}
-              |
-              <a href={" "} id="fahrenheit">
-                °F
-              </a>{" "}
-            </span>
-          </p>
-          </div>
-             <div className="col-4">
+   
+    
+        <h3 id="temperature">{temperature}<span className="degrees">°C|°F</span></h3>
+        
       <img
         src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
         alt=""
-        id="icon"
-      />
-    </div>
-    <div className="col-4">
+        id="icon"  />
+        
+    
+    
       <ul>
         <li id="description">Cloudy</li>
         <li>
@@ -52,8 +35,8 @@ if(ready) {
           Wind: <span id="wind"></span> 2 km/h
         </li>
       </ul>
-    </div>
-          <div className="col-10">
+    
+          
         <input
           type="search"
           placeholder="Search for a city"
@@ -61,8 +44,8 @@ if(ready) {
           autoComplete="off"
         />
         <input type="submit" value="🔍 Search" id="search-button" />
-      </div>
-      <div className="col-2">
+      
+      
         <button>
           <span role="img" aria-label="Pin">
             📍
@@ -72,9 +55,7 @@ if(ready) {
       </div>
        
     
-        </div>
-      </div>
-    </div>
+     
   );
 } else {
   const apiKey="11a6bd137d38c9eff9b66fb017459c47";
