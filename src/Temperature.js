@@ -4,53 +4,63 @@ import "./styles.css";
 
 
 export default function Temperature() {
-  const [ready, setReady] = useState(false)
- const [temperature, setTemperature] = useState(null); 
+ 
+ const [weatherData, setWeatherData] = useState({ ready: false }); 
  function handleResponse(response) {
-    setTemperature(Math.round(response.data.main.temp));
-    setReady(true);
+   setWeatherData({
+     ready: true,
+     temperature: Math.round(response.data.main.temp),
+     humidity: Math.round(response.data.main.humidity),
+     description: response.data.weather[0].description,
+     icon: "https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png",
+     wind: Math.round(response.data.wind.speed),
+     city: response.data.name,
+     date: "Saturday 12:00",
+   })
+    
  }
-if(ready) {
+if(weatherData.ready) {
   return (
     <div className="row">
       <div className="col-4">
-  <h1 id="city">Aarhus</h1>
-      <h2 id="date">Last updated: Saturday 12:00</h2>
+  <h1 id="city">{weatherData.city}</h1>
+      <h2 id="date">Last updated: {weatherData.date}</h2>
    
     
-        <h3 id="temperature">{temperature}<span className="degrees">°C|°F</span></h3>
+        <h3 id="temperature">{weatherData.temperature}<span className="degrees">°C|°F</span></h3>
         </div>
       <div className="col-4">
       <img
-        src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
-        alt=""
+      src={weatherData.icon}
+        alt={weatherData.description}
         id="icon"  />
         </div>
     
     <div className="col-4">
       <ul>
-        <li id="description">Cloudy</li>
+        <li id="description">{weatherData.description}</li>
         <li>
-          Humidity: <span id="humidity"></span>80%
+          Humidity: <span id="humidity"></span>{weatherData.humidity} %
         </li>
         <li>
-          Wind: <span id="wind"></span> 2 km/h
+          Wind: <span id="wind"></span> {weatherData.wind} km/h
         </li>
       </ul>
     </div>
           <div className="row">
-            <div className="col-4">
+            <div className="col-8">
         <input
           type="search"
           placeholder="Search for a city"
           id="search-form"
           autoComplete="off"
         />
-      </div>
-    <div className="col-4">
         <input type="submit" value="🔍 Search" id="search-button" />
-      
       </div>
+    
+        
+      
+      
       <div className="col-4">
         <button>
           <span role="img" aria-label="Pin">
