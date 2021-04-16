@@ -12,20 +12,22 @@ export default function Temperature() {
  }
 if(ready) {
   return (
-    <div>
+    <div className="row">
+      <div className="col-4">
   <h1 id="city">Aarhus</h1>
       <h2 id="date">Last updated: Saturday 12:00</h2>
    
     
         <h3 id="temperature">{temperature}<span className="degrees">°C|°F</span></h3>
-        
+        </div>
+      <div className="col-4">
       <img
         src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
         alt=""
         id="icon"  />
-        
+        </div>
     
-    
+    <div className="col-4">
       <ul>
         <li id="description">Cloudy</li>
         <li>
@@ -35,23 +37,29 @@ if(ready) {
           Wind: <span id="wind"></span> 2 km/h
         </li>
       </ul>
-    
-          
+    </div>
+          <div className="row">
+            <div className="col-4">
         <input
           type="search"
           placeholder="Search for a city"
           id="search-form"
           autoComplete="off"
         />
+      </div>
+    <div className="col-4">
         <input type="submit" value="🔍 Search" id="search-button" />
       
-      
+      </div>
+      <div className="col-4">
         <button>
           <span role="img" aria-label="Pin">
             📍
           </span>
           Current
         </button>
+      </div>
+      </div>
       </div>
        
     
