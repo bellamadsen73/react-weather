@@ -17,7 +17,7 @@ export default function Temperature() {
      icon: "https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png",
      wind: Math.round(response.data.wind.speed),
      city: response.data.name,
-     date: new Date(response.data.dt * 1000), 
+     date: new Date(response.data.dt * 1000),
    })
     
  }
