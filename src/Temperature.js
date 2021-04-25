@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FormattedDate from "./FormattedDate";
+
 import axios from "axios";
 import "./styles.css";
 
@@ -27,7 +27,7 @@ if(weatherData.ready) {
       <div className="col-4">
   <h1 id="city">{weatherData.city}</h1>
       <h2>
-      <FormattedDate date={weatherData.date}/>
+      
       </h2>
    
     
