@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import FormattedDate from "./FormattedDate";
+
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./styles.css";
 
@@ -23,34 +24,9 @@ export default function Temperature() {
  }
 if(weatherData.ready) {
   return (
-    <div className="row">
-      <div className="col-4">
-  <h1 id="city">{weatherData.city}</h1>
-      <h2>
-      <FormattedDate date={weatherData.date} />
-      </h2>
-   
     
-        <h3 id="temperature">{weatherData.temperature}<span className="degrees">°C|°F</span></h3>
-        </div>
-      <div className="col-4">
-      <img
-      src={weatherData.icon}
-        alt={weatherData.description}
-        id="icon"  />
-        </div>
-    
-    <div className="col-4">
-      <ul>
-        <li id="description">{weatherData.description}</li>
-        <li>
-          Humidity: <span id="humidity"></span>{weatherData.humidity} %
-        </li>
-        <li>
-          Wind: <span id="wind"></span> {weatherData.wind} km/h
-        </li>
-      </ul>
-    </div>
+  <div>
+    <WeatherInfo data={weatherData} />
           <div className="row">
             <div className="col-8">
         <input
@@ -74,10 +50,7 @@ if(weatherData.ready) {
         </button>
       </div>
       </div>
-      </div>
-       
-    
-     
+       </div>
   );
 } else {
   const apiKey="11a6bd137d38c9eff9b66fb017459c47";
