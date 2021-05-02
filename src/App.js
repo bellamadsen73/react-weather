@@ -10,7 +10,7 @@ export default function App() {
       <div className="wrapper">
         
         <div className="row">
-          <Temperature />
+          <Temperature defaultCity ="London"/>
           
         </div>
       </div>

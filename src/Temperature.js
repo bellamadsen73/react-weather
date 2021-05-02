@@ -15,7 +15,7 @@ export default function Temperature(props) {
      temperature: Math.round(response.data.main.temp),
      humidity: Math.round(response.data.main.humidity),
      description: response.data.weather[0].description,
-     icon: "https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png",
+     icon: `http://openweathermap.org/img/wn/@{response.data.weather[0].icon}2x.png`,
      wind: Math.round(response.data.wind.speed),
      city: response.data.name,
      date: new Date(response.data.dt * 1000),
@@ -23,22 +23,23 @@ export default function Temperature(props) {
     
  }
 
+function search() {
+ const apiKey="11a6bd137d38c9eff9b66fb017459c47";
 
- function handleSubmit(event) {
+const apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+ 
+  axios.get(apiUrl).then(handleResponse);
+}
+
+function handleSubmit(event) {
   event.preventDefault();
-  search();
+search();
 }
 
 function handleCityChange(event) {
 setCity(event.target.value);
+
 }
-function search() {
-  const apiKey="11a6bd137d38c9eff9b66fb017459c47";
-let city ="London";
-const apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
- 
-  axios.get(apiUrl).then(handleResponse);
- }
 
 if(weatherData.ready) {
   return (
@@ -55,13 +56,10 @@ if(weatherData.ready) {
           autoComplete="off"
           onChange={handleCityChange}
         />
-        <input type="submit" value="🔍 Search" id="search-button"  />
-      </form>
-      </div>
-    
-        
+        <input type="submit" value="🔍 Search" id="search-button" />
       
-      
+      </form> 
+      </div>  
       <div className="col-4">
         <button>
           <span role="img" aria-label="Pin">
@@ -74,7 +72,7 @@ if(weatherData.ready) {
        </div>
   );
 } else {
-search();
+ search();
   return "Loading"
   
 }
