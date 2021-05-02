@@ -28,7 +28,7 @@ a {
 
 .wrapper {
   border: 1px solid black;
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
   margin-top: 20px;
   background-image: linear-gradient(#fd72c3, #bb83ff, #59aeff);
