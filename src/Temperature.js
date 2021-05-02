@@ -60,14 +60,7 @@ if(weatherData.ready) {
       
       </form> 
       </div>  
-      <div className="col-4">
-        <button>
-          <span role="img" aria-label="Pin">
-            📍
-          </span>
-          Current
-        </button>
-      </div>
+      
       </div>
        </div>
   );
