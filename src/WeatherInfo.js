@@ -17,7 +17,7 @@ return (
     <Units celsius={props.data.temperature}/>
      </div>
       <div className="col-2">
-      <div className="float-left"><WeatherIcon code={props.data.icon} />
+      <div className="float-left"><WeatherIcon code={props.data.icon} size={64}/>
       
         </div>
     </div>

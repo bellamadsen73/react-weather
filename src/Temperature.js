@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Forecast from "./Forecast";
 import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./styles.css";
@@ -59,8 +59,9 @@ if(weatherData.ready) {
         <input type="submit" value="🔍 Search" id="search-button" />
       
       </form> 
+     
       </div>  
-      
+       <Forecast />
       </div>
        </div>
   );
